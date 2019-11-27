@@ -1,2 +1,6 @@
 # frontend
-React
+React {
+```
+npx create-react app "nameproject"
+```
+}
