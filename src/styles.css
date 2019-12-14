@@ -1,0 +1,14 @@
+body{
+    background-color: #0e1e25;
+}
+div.div-center {
+    display: flex;
+    justify-content: center;
+}
+a {
+    text-decoration: none !important;
+}
+#particles-js{
+    width: 100vw !important;
+    height: 100vh !important;
+}

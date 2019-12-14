@@ -1,0 +1,17 @@
+@keyframes refused {
+  0%, 100% {
+    transform: translateX(0%);
+  }
+  25%, 75% {
+    transform: translateX(-5%);
+  }
+  50% {
+    transform: translateX(5%);
+  }
+
+}
+
+.anim-refused {
+  animation-name: refused;
+  animation-duration: 500ms;
+}
