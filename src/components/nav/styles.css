@@ -1,0 +1,29 @@
+nav#nav-left{
+  background: url(../../assets/images/background-nav-left.png) center center;
+  background-size: cover;
+  height: 100vh;
+  box-sizing: border-box;
+  box-shadow: 5px 15px 15px #00000085;
+}
+nav#nav-left > ul{
+  list-style-type: none;
+  text-align: center;
+  padding: 10px !important;
+}
+nav#nav-left > ul > a > li{
+  transition: padding 400ms;
+  height: 50px;
+  padding: 10px;
+}
+nav#nav-left > ul > a > li{
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+nav#nav-left > ul > a > li:hover{
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+button#btn-nav{
+  box-shadow: 0 0 0 0 !important;
+}

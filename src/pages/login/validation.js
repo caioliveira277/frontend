@@ -17,7 +17,7 @@ async function Validation(username, password) {
         } else {
           response.isValidadeted = true;
           response.message = res.data.message;
-          localStorage.setItem("token", res.data.token);
+          sessionStorage.setItem("token", res.data.token);
         }
       });
   } catch (error) {

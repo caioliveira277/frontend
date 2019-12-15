@@ -1,32 +1,74 @@
-@keyframes fade-in{
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transfor: scale(1);
-    }
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transfor: scale(1);
+  }
 }
-@keyframes fade-out{
-    from {
-        opacity: 1;
-        transfor: scale(1);
-    }
-    to {
-        opacity: 0;
-        transform: scale(0.9);
-    }
+@keyframes fade-out {
+  from {
+    opacity: 1;
+    transfor: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+@keyframes fade-in-d-big {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -500px, 0);
+  }
+  
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fade-out-l-big {
+  from {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+    opacity: 0;
+  }
+}
+@keyframes fade-in-r-big {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
-.anim-fade-in{
-    animation-name: fade-in;
-    animation-duration: 800ms;
-    animation-fill-mode: forwards;
-    
+.anim-fade-in {
+  animation-name: fade-in;
+  animation-duration: 800ms;
+  animation-fill-mode: forwards;
 }
-.anim-fade-out{
-    animation-name: fade-out;
-    animation-duration: 800ms;
-    animation-fill-mode: forwards;
+.anim-fade-out {
+  animation-name: fade-out;
+  animation-duration: 800ms;
+  animation-fill-mode: forwards;
+}
+.anim-fade-in-d-big {
+  animation: fade-in-d-big 400ms ease;
+  transition: all 500ms;
+}
+.anim-fade-out-l-big {
+  animation: fade-out-l-big 600ms ease forwards;
+  transition: all 500ms;
+}
+.anim-fade-in-r-big {
+  animation: fade-in-r-big 600ms ease forwards;
+  transition: all 500ms;
 }

@@ -1,5 +1,11 @@
+:root{
+    --color-theme1: rgb(108, 82, 195); 
+    --color-theme1-2: #5a48a5; 
+    --color-theme2: #0e1e25; 
+    --color-theme3: #5ac146; 
+}
 body{
-    background-color: #0e1e25;
+    background-color: #ffffff;
 }
 div.div-center {
     display: flex;
@@ -11,4 +17,5 @@ a {
 #particles-js{
     width: 100vw !important;
     height: 100vh !important;
+    background-color: var(--color-theme2);
 }

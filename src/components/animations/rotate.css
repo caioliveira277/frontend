@@ -1,0 +1,24 @@
+@keyframes rotate-left-right {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-180deg);
+  }
+}
+@keyframes rotate-right-left {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+.anim-rotate-l-r{
+  animation: rotate-left-right 800ms forwards;
+  transition: all 800ms;
+}
+.anim-rotate-r-l{
+  animation: rotate-right-left 800ms forwards;
+  transition: all 800ms;
+}
