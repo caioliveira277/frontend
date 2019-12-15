@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { FaUserAlt, FaKey } from "react-icons/fa";
 import { Form, Button, InputGroup, Toast } from "react-bootstrap";
-import Validation from "./validation";
+import Validation from "../../middleware/validation";
 import ToastMessage from "../../components/toastMessage/index";
 import "../../components/animations/fade.css";
 import "./styles.css";
