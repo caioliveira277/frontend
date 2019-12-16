@@ -29,31 +29,10 @@ function NavLeft() {
   return (
     <nav id="nav-left" className="col-2 col-md-2 anim-fade-in-r-big">
       <ul>
-        <h6 className="text-left text-info font-weight-bold">Utilitarios:</h6>
         <a href="/app">
           <li>
-            <FaHome /> Home
-          </li>
-        </a>
-        <a href="/home">
-          <li>
-            <FaHome /> Link 2
-          </li>
-        </a>
-        <a href="/home">
-          <li>
-            <FaHome /> Link 3
-          </li>
-        </a>
-        <h6 className="text-left text-info font-weight-bold">Testes:</h6>
-        <a href="/home">
-          <li>
-            <FaHome /> Link 4
-          </li>
-        </a>
-        <a href="/home">
-          <li>
-            <FaHome /> Link 5
+            <FaHome className="text-center"/> 
+            <span className="d-none d-sm-inline">Home</span>
           </li>
         </a>
       </ul>
