@@ -3,6 +3,7 @@ import { FaUserAlt, FaKey } from "react-icons/fa";
 import { Form, Button, InputGroup, Toast } from "react-bootstrap";
 import Validation from "../../middleware/validation";
 import ToastMessage from "../../components/toastMessage/index";
+import Particle from "../../components/particles";
 import "../../components/animations/fade.css";
 import "./styles.css";
 
@@ -26,7 +27,7 @@ function Login(props) {
 
     Validation(username, password).then(
       response => {
-        if (response.isValidadeted === false) {
+        if (response.Validated === false) {
           formBtn.current.innerHTML = "Enviar";
           ToastMessage(elementToast,"danger","Ops...",response.message);
         } else {
@@ -39,6 +40,7 @@ function Login(props) {
     );
   };
   return (
+    <>
     <section className="position-absolute" id="form_login">
       <div className="box anim-fade-in">
         <Form onSubmit={handleSubmit}>
@@ -90,6 +92,8 @@ function Login(props) {
         </Form>
       </div>
     </section>
+    <Particle></Particle>
+    </>
   );
 }
 

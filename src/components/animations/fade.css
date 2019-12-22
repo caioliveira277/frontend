@@ -18,17 +18,6 @@
     transform: scale(0.9);
   }
 }
-@keyframes fade-in-d-big {
-  from {
-    opacity: 0;
-    transform: translate3d(0, -500px, 0);
-  }
-  
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-}
 @keyframes fade-out-l-big {
   from {
     transform: translate3d(0, 0, 0);
@@ -37,16 +26,6 @@
   to {
     transform: translate3d(-100%, 0, 0);
     opacity: 0;
-  }
-}
-@keyframes fade-in-r-big {
-  from {
-    opacity: 0;
-    transform: translate3d(-100%, 0, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -59,10 +38,6 @@
   animation-name: fade-out;
   animation-duration: 800ms;
   animation-fill-mode: forwards;
-}
-.anim-fade-in-d-big {
-  animation: fade-in-d-big 400ms ease;
-  transition: all 500ms;
 }
 .anim-fade-out-l-big {
   animation: fade-out-l-big 600ms ease forwards;

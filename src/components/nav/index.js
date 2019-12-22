@@ -7,10 +7,15 @@ import "./styles.css";
 const NavToggle = () => {
   const nav = document.querySelector("#nav-left");
   const btn = document.querySelector("#btn-nav");
+  const article = document.querySelector("article");
+
   nav.classList.toggle("anim-fade-out-l-big");
   nav.classList.toggle("anim-fade-in-r-big");
   btn.classList.toggle("anim-rotate-l-r");
   btn.classList.toggle("anim-rotate-r-l");
+  nav.classList.toggle("d-none");
+  article.classList.toggle("col-10");
+  article.classList.toggle("col-12");
 };
 
 function BtnNavLeft() {
@@ -28,11 +33,11 @@ function BtnNavLeft() {
 function NavLeft() {
   return (
     <nav id="nav-left" className="col-2 col-md-2 anim-fade-in-r-big">
-      <ul>
+      <ul className="d-inline">
         <a href="/app">
           <li>
-            <FaHome className="text-center"/> 
-            <span className="d-none d-sm-inline">Home</span>
+            <FaHome />
+            <span className="d-none d-sm-inline"> Home</span>
           </li>
         </a>
       </ul>

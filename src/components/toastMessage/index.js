@@ -1,25 +1,30 @@
 import "../../components/animations/refused.css";
 /**
  * Toast Message
- * 
+ *
  * @param   Toast required
- * @param   Type default = "success" || "danger" 
- * @param   TextHeader default = "Sucesso!" 
- * @param   TextBody default = "" 
+ * @param   Type default = "success" || "danger"
+ * @param   TextHeader default = "Sucesso!"
+ * @param   TextBody default = ""
  * @returns [boolean]
  */
-function ToastMessage(toast, type = "success", textHeader = "Sucesso!", textBody = ""){
+function ToastMessage(
+  toast,
+  type = "success",
+  textHeader = "Sucesso!",
+  textBody = ""
+) {
   let elementHeader = toast.querySelector("strong");
   let elementBody = toast.querySelector("div.toast-body");
 
-  if(type !== "success"){
+  if (type !== "success") {
     elementHeader.classList.remove(`text-success`);
 
     toast.classList.add("border-primary", "anim-refused");
     toast.addEventListener("animationend", () => {
       toast.classList.remove("anim-refused");
     });
-  }else{
+  } else {
     elementHeader.classList.remove(`text-danger`);
   }
   elementHeader.classList.add(`text-${type}`);
@@ -29,4 +34,4 @@ function ToastMessage(toast, type = "success", textHeader = "Sucesso!", textBody
   return true;
 }
 
-export default ToastMessage; 
+export default ToastMessage;

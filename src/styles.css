@@ -1,21 +1,23 @@
-:root{
-    --color-theme1: rgb(108, 82, 195); 
-    --color-theme1-2: #5a48a5; 
-    --color-theme2: #0e1e25; 
-    --color-theme3: #5ac146; 
+:root {
+  --color-theme1: rgb(108, 82, 195);
+  --color-theme1-2: #5a48a5;
+  --color-theme2: #0e1e25;
+  --color-theme3: #5ac146;
 }
-body{
-    background-color: #edf0f2;
+html{
+  overflow-y: hidden;
+}
+body {
+  background-color: #edf0f2;
+  overflow: hidden;
+}
+.bg-theme2 {
+  background-color: var(--color-theme2);
 }
 div.div-center {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 a {
-    text-decoration: none !important;
-}
-#particles-js{
-    width: 100vw !important;
-    height: 100vh !important;
-    background-color: var(--color-theme2);
+  text-decoration: none !important;
 }

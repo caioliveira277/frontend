@@ -57,6 +57,7 @@ div.user-info-dropdown > div {
   clip-path: polygon(68% 10%, 85% 0, 100% 10%, 100% 100%, 0 100%, 0 10%);
   border-color: var(--color-theme1);
   width: 100%;
+  animation-duration: 500ms !important;
 }
 div.user-info-dropdown > div > div.dropdown-header {
   margin-top: -8px;
