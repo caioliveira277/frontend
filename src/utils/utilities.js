@@ -22,4 +22,19 @@ const weeks = [
   "Sabado",
   "Domingo"
 ];
-export { dateNow, monthsName, weeks };
+const dateToday = `${dateNow.getDate()}/${dateNow.getMonth() + 1}/${dateNow.getFullYear()}`;
+
+const DateFormatDB = (date, time) => {
+  const splitDateTime = date.split(" ");
+  const splitDate = splitDateTime[0].split("-");
+
+  const setDate = `${splitDate[2]}/${splitDate[1]}/${splitDate[0]}`;
+
+  if (time === true) {
+    const splitTime = splitDateTime[1].split(".");
+    const setTime = splitTime[0];
+    return setDate + " " + setTime;
+  }
+  return setDate;
+};
+export { dateNow, monthsName, weeks, dateToday, DateFormatDB };

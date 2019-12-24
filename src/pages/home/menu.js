@@ -1,29 +1,28 @@
 import React from "react";
 import "./styles.css";
 import { Carousel, Row, Card, Badge } from "react-bootstrap";
-import { dateNow } from "../../utils/utilities";
+import { dateToday, DateFormatDB } from "../../utils/utilities";
 
 const CardElement = data => {
   const cardElement = [];
-  const today = dateNow.getDate();
   for (let i = 0; i < data.length; i++) {
     let cardClass = "col-8 col-lg-3 text-dark";
     let badgeClass = "text-white";
-    let publishAt = data[i].publishAt.split("/")[0];
-    if (parseInt(publishAt) === today) {
+    let publishAt = DateFormatDB(data[i].publishAt); 
+    if (publishAt === dateToday) {
       cardClass += " spotlight";
       badgeClass += " bg-theme1";
-      data[i].publishAt = "Hoje";
+      publishAt = "Hoje";
     }
     cardElement.push(
       <Card className={cardClass} key={i}>
         <Badge pill variant="primary" className={badgeClass}>
-          {data[i].publishAt}
+          {publishAt}
         </Badge>
         {data[i].description}
       </Card>
     );
-    if (i == 2) break;
+    if (i === 2) break;
   }
   return cardElement;
 };
