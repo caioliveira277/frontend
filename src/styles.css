@@ -11,8 +11,20 @@ body {
   background-color: #edf0f2;
   overflow: hidden;
 }
+.bg-theme1 {
+  background-color: var(--color-theme1);
+}
 .bg-theme2 {
   background-color: var(--color-theme2);
+}
+.bg-theme3 {
+  background-color: var(--color-theme3);
+}
+.text-theme1 {
+  color: var(--color-theme1);
+}
+.text-theme2 {
+  color: var(--color-theme2);
 }
 div.div-center {
   display: flex;

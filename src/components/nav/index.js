@@ -5,17 +5,19 @@ import "./../animations/rotate.css";
 import "./styles.css";
 
 const NavToggle = () => {
-  const nav = document.querySelector("#nav-left");
-  const btn = document.querySelector("#btn-nav");
-  const article = document.querySelector("article");
+  const nav = document.querySelector("nav#nav-left");
+  const btn = document.querySelector("button#btn-nav");
+  const article = document.querySelector("article#main-article");
 
   nav.classList.toggle("anim-fade-out-l-big");
   nav.classList.toggle("anim-fade-in-r-big");
   btn.classList.toggle("anim-rotate-l-r");
   btn.classList.toggle("anim-rotate-r-l");
-  nav.classList.toggle("d-none");
   article.classList.toggle("col-10");
-  article.classList.toggle("col-12");
+  setTimeout(() => {
+    nav.classList.toggle("d-none");
+    article.classList.toggle("col-12");
+  }, 400);
 };
 
 function BtnNavLeft() {

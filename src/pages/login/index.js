@@ -63,6 +63,7 @@ function Login(props) {
               type="text"
               value={username}
               autoComplete="username"
+              autoFocus
               onChange={event => setUsername(event.target.value)}
             />
           </InputGroup>
