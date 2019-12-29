@@ -6,11 +6,11 @@ import ToastMessage from "../../components/toastMessage/index";
 import Particle from "../../components/particles";
 import "../../components/animations/fade.css";
 import "./styles.css";
+import { dateNow } from "../../utils/utilities";
 
 const DateNow = () => {
-  let dateNow = new Date();
   return `Hoje é ${dateNow.getDate()}
-	do ${dateNow.getMonth()} de ${dateNow.getFullYear()}`;
+	do ${dateNow.getMonth() + 1} de ${dateNow.getFullYear()}`;
 };
 
 function Login(props) {
@@ -32,7 +32,7 @@ function Login(props) {
           ToastMessage(elementToast,"danger","Ops...",response.message);
         } else {
           ToastMessage(elementToast,"success",DateNow(),`Olá ${response.message}`);
-          setInterval(() => {
+          setTimeout(() => {
             props.history.push("/app");
           }, 1000);
         }
@@ -81,13 +81,13 @@ function Login(props) {
             />
           </InputGroup>
           <Form.Group className="text-right">
-            <a href="#http" className="text-primary">
+            <a href="#http" className="text-info">
               Esqueceu sua senha?
             </a>
           </Form.Group>
           <div className="text-center">
-            <Button variant="info" className="w-25" type="submit" ref={formBtn}>
-              Enviar
+            <Button className="w-25 bg-theme1" type="submit" ref={formBtn}>
+              Entrar
             </Button>
           </div>
         </Form>

@@ -7,9 +7,14 @@ section#form_login {
   align-items: center;
   padding: 10px;
 }
-section#form_login > form,
+section#form_login > div > form > div >
 button {
   box-shadow: 0px 5px 15px #00000085;
+  border-color: var(--color-theme1-2);
+}
+section#form_login > div > form > div >
+button:hover {
+  background-color: var(--color-theme1-2) !important;
 }
 section#form_login > div.box {
   padding: 15px;
@@ -24,5 +29,6 @@ section#form_login > div.box {
   background-color: var(--color-theme2);
 }
 div.toast {
-  box-shadow: 0px 5px 15px #00000085;
+  box-shadow: 0px 5px 15px #3d3d3d85;
 }
+

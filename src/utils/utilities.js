@@ -24,7 +24,7 @@ const weeks = [
 ];
 const dateToday = `${dateNow.getDate()}/${dateNow.getMonth() + 1}/${dateNow.getFullYear()}`;
 
-const DateFormatDB = (date, time) => {
+const DateFormatDB = (date, time = false) => {
   const splitDateTime = date.split(" ");
   const splitDate = splitDateTime[0].split("-");
 
@@ -37,4 +37,5 @@ const DateFormatDB = (date, time) => {
   }
   return setDate;
 };
+
 export { dateNow, monthsName, weeks, dateToday, DateFormatDB };

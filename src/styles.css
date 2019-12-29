@@ -5,11 +5,17 @@
   --color-theme3: #5ac146;
 }
 html{
-  overflow-y: hidden;
+  overflow-x: hidden;
+}
+html::-webkit-scrollbar {
+  width: 0 !important;
+}
+body::-webkit-scrollbar {
+  width: 0 !important;
 }
 body {
   background-color: #edf0f2;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .bg-theme1 {
   background-color: var(--color-theme1);
@@ -26,9 +32,15 @@ body {
 .text-theme2 {
   color: var(--color-theme2);
 }
+.text-theme3 {
+  color: var(--color-theme3);
+}
 div.div-center {
   display: flex;
   justify-content: center;
+}
+.z-index99{
+  z-index: 99;
 }
 a {
   text-decoration: none !important;

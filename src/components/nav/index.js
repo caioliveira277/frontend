@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FaHome, FaAngleDoubleLeft } from "react-icons/fa";
 import "./../animations/fade.css";
 import "./../animations/rotate.css";
@@ -36,12 +37,12 @@ function NavLeft() {
   return (
     <nav id="nav-left" className="col-2 col-md-2 anim-fade-in-r-big">
       <ul className="d-inline">
-        <a href="/app">
+        <Link to={`/app`}>
           <li>
             <FaHome />
             <span className="d-none d-sm-inline"> Home</span>
           </li>
-        </a>
+        </Link>
       </ul>
     </nav>
   );

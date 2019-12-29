@@ -3,7 +3,7 @@
 }
 article#main-article {
   transition: padding 300ms ease;
-  max-height: 85vh;
+  max-height: 99vh;
   overflow-y: auto;
 }
 article#main-article::-webkit-scrollbar {

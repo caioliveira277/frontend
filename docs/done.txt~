@@ -1,0 +1,22 @@
+x 2019-12-25 2019-12-25 criar formularia com edição dos dados atuais do user
+x 2019-12-25 2019-12-25 corrigir responsividade do article
+x 2019-12-25 2019-12-25 estilizar layout do formulário para padrões do sistema
+x 2019-12-25 2019-12-25 trazer dados do banco no formulario
+x 2019-12-25 2019-12-25 tratar erros de nao preenchimento
+x 2019-12-25 2019-12-25 renderizar imagem selecionada
+x 2019-12-26 2019-12-25 reformular funcionamento da page login
+x 2019-12-26 2019-12-25 salvar imagem user default local a fim de eliminar a requisição atual
+x 2019-12-26 2019-12-25 criar campos no banco de userimage, contatos, idade e cpf
+x 2019-12-26 2019-12-26 atualizar formato de salvamento de datas sequelize pg
+x 2019-12-27 2019-12-25 completar formulario profile de endereços
+x 2019-12-27 2019-12-27 melhorar layout do formulario profile
+x 2019-12-27 2019-12-25 trazer dados pendentes para o formulario
+x 2019-12-27 2019-12-27 corrigir bug na renderização de imagem do perfil
+x 2019-12-27 2019-12-27 adicionar desenho de formulario no espaço em branco, somente em md (cards com sgv)
+x 2019-12-27 2019-12-27 adicionar datepicker
+x 2019-12-28 2019-12-28 adicionar mensagem toast
+x 2019-12-28 2019-12-28 adicionar mask em campos necessários
+x 2019-12-28 2019-12-28 data de nascimento esta mostrando um dia a menos do selecionado (banco está correto)
+x 2019-12-28 2019-12-27 finalizar api busca cep
+x 2019-12-29 2019-12-28 tratar erros de lengh sequelize
+x 2019-12-29 2019-12-25 concluir salvameto de ambos os dados do profile

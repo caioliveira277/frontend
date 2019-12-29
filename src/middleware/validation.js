@@ -1,4 +1,4 @@
-import api from "../services/api";
+import { Api } from "../services/api";
 
 async function Validation(username, password) {
   const response = { Validated: null, message: null };
@@ -6,7 +6,7 @@ async function Validation(username, password) {
     if (!username) throw new Error("Nome de usuario não informado!");
     if (!password) throw new Error("Senha não informada!");
 
-    await api
+    await Api
       .post("/authenticate", {
         username: username,
         password: password

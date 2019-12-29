@@ -1,0 +1,4 @@
+2019-12-29 otimizar codigo
+2019-12-29 corrigir tamanho do nome no header e login
+2019-12-28 corrigir problema no toastmessage (só aparece apos dar refrash na pagina)
+2019-12-27 adicionar upload de imagem perfil

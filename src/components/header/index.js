@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { FaSearch, FaUserEdit, FaDoorOpen, FaAngleDown } from "react-icons/fa";
 import { InputGroup, Dropdown } from "react-bootstrap";
 import { BtnNavLeft } from "./../nav/index";
 import "./../animations/fade.css";
 import "./styles.css";
+import { currentUser } from "../../services/api";
+import UserDefaultImg from "../../assets/images/userDefault.png"
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.min.css';
 
 const Header = () => {
+  const [name, setName] = useState("...");
+  const [userImage, setUserImage] = useState(UserDefaultImg);
+  useEffect(() => {
+    currentUser().then(result => {
+      setName(result.data.name);
+      if (result.data.userImage) setUserImage(result.data.userImage);
+    });
+  }, []);
   const DropdownUserInfo = React.forwardRef(({ children, onClick }, ref) => (
     <a
       className="text-white"
@@ -17,12 +30,9 @@ const Header = () => {
       }}
     >
       <span className="user-info-card">
-        <img
-          src="https://ipc.digital/wp-content/uploads/2016/07/icon-user-default.png"
-          alt="user"
-        />
-        <strong className="text-white m-3 d-none d-md-inline">
-          Nome usuario
+        <img src={userImage} alt="user" />
+        <strong className="text-white m-3 d-none d-md-inline" id="nameUser">
+          {name}
         </strong>
       </span>
       <FaAngleDown className="d-none d-sm-inline" />
@@ -30,14 +40,10 @@ const Header = () => {
     </a>
   ));
 
-  const Loggout = async () => {
-    await sessionStorage.clear();
-    await window.location.reload();
-  };
-
   return (
     <header id="main-header">
       <section className="row">
+        <ToastContainer />
         <div className="col-2 col-sm-2 nav">
           <span>
             <span className="d-none d-md-inline">PAINEL</span>
@@ -63,12 +69,16 @@ const Header = () => {
             <Dropdown.Toggle as={DropdownUserInfo}></Dropdown.Toggle>
             <Dropdown.Menu className="anim-fade-in font-size">
               <Dropdown.Header></Dropdown.Header>
-              <Dropdown.Item eventKey="1">
+              <Link to={`/profile`} className="dropdown-item">
                 <FaUserEdit /> Perfil
-              </Dropdown.Item>
-              <Dropdown.Item eventKey="2" onClick={Loggout}>
+              </Link>
+              <Link
+                to={`/`}
+                className="dropdown-item"
+                onClick={() => sessionStorage.clear()}
+              >
                 <FaDoorOpen /> Sair
-              </Dropdown.Item>
+              </Link>
             </Dropdown.Menu>
           </Dropdown>
         </div>

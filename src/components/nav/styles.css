@@ -14,6 +14,7 @@ nav#nav-left > ul > a > li{
   transition: padding 400ms;
   height: 50px;
   padding: 10px;
+  margin-bottom: 10px;
 }
 nav#nav-left > ul > a > li{
   color: #ffffff;
