@@ -30,7 +30,7 @@ export default function Profile() {
   const [number, setNumber] = useState("");
   const [city, setCity] = useState("");
   const [neighborhood, setNeighborhood] = useState("");
-  const [state, setState] = useState("");
+  const [state, setState] = useState("UF");
   const [zipcode, setZipcode] = useState("");
   const [id_address, setId_address] = useState(null);
 
@@ -49,21 +49,23 @@ export default function Profile() {
       setDateOfBirth(result.data.dateOfBirth.split("-"));
       setUsername(result.data.username);
       setPassword(result.data.password);
-      setStreet(result.data.address.street);
-      setComplement(result.data.address.complement);
-      setNumber(result.data.address.number);
-      setCity(result.data.address.cities.city);
-      setNeighborhood(result.data.address.neighborhoods.neighborhood);
-      setState(result.data.address.states.state);
-      setZipcode(result.data.address.zipcode);
-      setId_address(result.data.id_address);
+      if (result.data.id_address) {
+        setStreet(result.data.address.street);
+        setComplement(result.data.address.complement);
+        setNumber(result.data.address.number);
+        setCity(result.data.address.cities.city);
+        setNeighborhood(result.data.address.neighborhoods.neighborhood);
+        setState(result.data.address.states.state);
+        setZipcode(result.data.address.zipcode);
+        setId_address(result.data.id_address);
+      }
     });
   }, []);
 
   const handleSubmit = e => {
     e.preventDefault();
-    saveProfile([
-      {
+    saveProfile({
+      user: {
         name,
         email,
         cellPhone,
@@ -74,15 +76,18 @@ export default function Profile() {
         password,
         id_address
       },
-      {
+      address: {
         street,
         number,
         city,
         neighborhood,
         state,
-        zipcode
+        zipcode,
+        complement
       }
-    ]);
+    }).then(result => {
+      setId_address(result);
+    });
   };
 
   const RenderImage = async e => {
@@ -379,7 +384,7 @@ export default function Profile() {
                   </div>
                   <div className="form-group col-4 col-md-2">
                     <label>Estado:</label>
-                    <select className="form-control" disabled onChange={e => setState}>
+                    <select className="form-control" disabled>
                       <option value={state}>{state}</option>
                     </select>
                   </div>

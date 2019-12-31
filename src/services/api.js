@@ -16,8 +16,25 @@ const currentUser = async () => {
   return user;
 };
 
+const Post = async (url, data, token) => {
+  const post = await Api.post(url, data, {
+    headers: {
+      Authorization: "Bearer " + token
+    }
+  })
+  return post;
+};
+const Put = async (url, data, token) => {
+  const post = await Api.put(url, data, {
+    headers: {
+      Authorization: "Bearer " + token
+    }
+  })
+  return post;
+};
+
 const ApiZipcode = axios.create({
   baseURL: "https://viacep.com.br/ws"
 });
 
-export { Api, currentUser, ApiZipcode };
+export { Api, currentUser, ApiZipcode, Post, Put };

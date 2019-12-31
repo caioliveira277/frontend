@@ -21,3 +21,5 @@ x 2019-12-28 2019-12-27 finalizar api busca cep
 x 2019-12-29 2019-12-28 tratar erros de lengh sequelize
 x 2019-12-29 2019-12-25 concluir salvameto de ambos os dados do profile
 x 2019-12-29 2019-12-28 configurar a busca do cep a partir da alteração do input
+x 2019-12-29 2019-12-29 corrigir bug no insert/update address
+x 2019-12-29 2019-12-29 otimizar codigo save profile
