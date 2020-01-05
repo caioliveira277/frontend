@@ -5,10 +5,12 @@ import { InputGroup, Dropdown } from "react-bootstrap";
 import { BtnNavLeft } from "./../nav/index";
 import "./../animations/fade.css";
 import "./styles.css";
-import { currentUser } from "../../services/api";
+import { currentUser, BaseURL } from "../../services/api";
 import UserDefaultImg from "../../assets/images/userDefault.png"
-import { ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.min.css';
+
+toast.configure();
 
 const Header = () => {
   const [name, setName] = useState("...");
@@ -16,13 +18,13 @@ const Header = () => {
   useEffect(() => {
     currentUser().then(result => {
       setName(result.data.name);
-      if (result.data.userImage) setUserImage(result.data.userImage);
+      if (result.data.gallery) setUserImage(`${BaseURL}/files/${result.data.gallery.key}`);
     });
   }, []);
   const DropdownUserInfo = React.forwardRef(({ children, onClick }, ref) => (
     <a
       className="text-white"
-      href="/home"
+      href="/#"
       ref={ref}
       onClick={e => {
         e.preventDefault();
@@ -43,7 +45,6 @@ const Header = () => {
   return (
     <header id="main-header">
       <section className="row">
-        <ToastContainer />
         <div className="col-2 col-sm-2 nav">
           <span>
             <span className="d-none d-md-inline">PAINEL</span>
@@ -69,7 +70,7 @@ const Header = () => {
             <Dropdown.Toggle as={DropdownUserInfo}></Dropdown.Toggle>
             <Dropdown.Menu className="anim-fade-in font-size">
               <Dropdown.Header></Dropdown.Header>
-              <Link to={`/profile`} className="dropdown-item">
+              <Link to={`/app/profile`} className="dropdown-item">
                 <FaUserEdit /> Perfil
               </Link>
               <Link

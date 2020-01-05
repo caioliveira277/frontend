@@ -4,6 +4,8 @@ import { isAuthenticated } from "./middleware/auth";
 import Login from "./pages/login";
 import Home from "./pages/home";
 import Profile from "./pages/profile";
+import Header from "./components/header";
+import { NavLeft } from "./components/nav";
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -20,11 +22,15 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 
 const Routes = () => (
   <BrowserRouter>
-    <Switch>
-      <Route exact path="/" component={Login} />
-      <PrivateRoute exact path="/app" component={Home} />
-      <PrivateRoute exact path="/profile" component={Profile} />
-    </Switch>
+    <Route exact path="/" component={Login} />
+    <Route path="/app" component={Header} />
+    <section className="row">
+      <Route path="/app" component={NavLeft} />
+      <Switch>
+        <PrivateRoute exact path="/app" component={Home} />
+        <PrivateRoute exact path="/app/profile" component={Profile} />
+      </Switch>
+    </section>
   </BrowserRouter>
 );
 
