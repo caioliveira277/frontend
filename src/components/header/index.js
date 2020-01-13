@@ -18,7 +18,7 @@ const Header = () => {
   useEffect(() => {
     currentUser().then(result => {
       setName(result.data.name);
-      if (result.data.gallery) setUserImage(`${BaseURL}/files/${result.data.gallery.key}`);
+      if (result.data.gallery.length) setUserImage(`${BaseURL}/files/${result.data.gallery[0].key}`);
     });
   }, []);
   const DropdownUserInfo = React.forwardRef(({ children, onClick }, ref) => (

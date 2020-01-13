@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaHome, FaAngleDoubleLeft } from "react-icons/fa";
+import { FaHome, FaAngleDoubleLeft, FaClipboardList } from "react-icons/fa";
 import "./../animations/fade.css";
 import "./../animations/rotate.css";
 import "./styles.css";
@@ -41,6 +41,12 @@ function NavLeft() {
           <li>
             <FaHome />
             <span className="d-none d-sm-inline"> Home</span>
+          </li>
+        </Link>
+        <Link to={`/app/menu`}>
+          <li>
+            <FaClipboardList />
+            <span className="d-none d-sm-inline"> Cardápio</span>
           </li>
         </Link>
       </ul>

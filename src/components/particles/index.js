@@ -7,7 +7,7 @@ function Particle() {
       params={{
         particles: {
           number: {
-            value: 70
+            value: 80
           },
           size: {
             value: 3

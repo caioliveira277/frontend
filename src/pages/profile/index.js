@@ -1,15 +1,15 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Card, InputGroup, OverlayTrigger, Tooltip } from "react-bootstrap";
-import "./styles.css";
-import { currentUser, ApiZipcode, BaseURL } from "../../services/api";
+import { ApiZipcode, BaseURL, currentUser } from "../../services/api";
 import SaveProfile from "./save-profile";
 import SaveUpload from "./save-upload";
 import UserDefaultImg from "../../assets/images/userDefault.png";
 import DatePicker from "react-date-picker";
 import { IMaskInput } from "react-imask";
 import ToastMessage from "../../components/toastMessage/toastfy";
+import "./styles.css";
 
-export default function Profile() {
+export default function Profile(data) {
   const cardImage = useRef("");
   const inputZipcode = useRef("");
 
@@ -38,13 +38,13 @@ export default function Profile() {
 
   useEffect(() => {
     currentUser().then(result => {
-      if (result.data.gallery) {
-        setUserImage(`${BaseURL}/files/${result.data.gallery.key}`);
-        setGalleryId(result.data.gallery.id);
-        setGalleryKey(result.data.gallery.key);
+      if (result.data.gallery.length) {
+        setUserImage(`${BaseURL}/files/${result.data.gallery[0].key}`);
+        setGalleryId(result.data.gallery[0].id);
+        setGalleryKey(result.data.gallery[0].key);
       }
       setIsActive(result.data.isActive === true ? "Ativo" : "Inativo");
-      setType(result.data.type === 1 ? "Administrador" : "Cliente");
+      setType(result.data.type);
       setId_user(result.data.id);
       setName(result.data.name);
       setEmail(result.data.email);
@@ -137,6 +137,7 @@ export default function Profile() {
         btnTarget.innerHTML = "Buscar";
       });
   };
+  
   return (
     <>
       <article className="col-10" id="main-article">
