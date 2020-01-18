@@ -15,6 +15,8 @@ body::-webkit-scrollbar {
 }
 body {
   background-color: #edf0f2;
+  background-image: url(//www.devmedia.com.br/view/img/grid-light.png?2);
+  background-attachment: fixed;
   overflow-x: hidden;
 }
 .bg-theme1 {

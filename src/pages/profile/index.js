@@ -42,18 +42,21 @@ export default function Profile() {
     id_address: null
   });
 
+  
   useEffect(() => {
     currentUser().then(result => {
       const dataUser = result.data;
       const dataGallery = result.data.gallery;
       const dataAddress = result.data.address;
-
       if (dataGallery.length) {
         dataUser.userImage = `${BaseURL}/files/${dataGallery[0].key}`;
         setGallery(dataGallery[0]);
+      }else{
+        dataUser.userImage = UserDefaultImg;
       }
-      
+
       dataUser.isActive = dataUser.isActive === true ? "Ativo" : "Inativo";
+      dataUser.id_user = dataUser.id
       setUser(dataUser);
       if (dataUser.id_address) {
         dataAddress.neighborhood = dataAddress.neighborhoods.neighborhood;
@@ -91,7 +94,7 @@ export default function Profile() {
       if (!result) {
         setUser({ ...user, userImage: UserDefaultImg });
       } else {
-        setGallery({ gallery, id: result.newId, key: result.newKey });
+        setGallery({ ...gallery, id: result.newId, key: result.newKey });
       }
     });
   };
@@ -330,7 +333,7 @@ export default function Profile() {
                     ref={inputZipcode}
                     className="form-control col-6 col-md-3"
                     onAccept={e =>
-                      handleChangeUser({
+                      handleChangeAddress({
                         target: { name: "zipcode", value: e }
                       })
                     }
@@ -379,7 +382,9 @@ export default function Profile() {
                   unmask={true}
                   className="form-control"
                   onAccept={e =>
-                    handleChangeUser({ target: { name: "number", value: e } })
+                    handleChangeAddress({
+                      target: { name: "number", value: e }
+                    })
                   }
                   placeholder="Nº"
                 />

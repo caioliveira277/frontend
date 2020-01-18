@@ -9,11 +9,11 @@ export default async function SaveUpload(upload = {}) {
     data.append("file", upload.file);
     data.append("type", "profile");
     data.append("id_user", upload.id_user);
+    console.log(upload.gallery)
+    if (upload.gallery.id) {
+      data.append("oldUpload", upload.gallery.key);
 
-    if (upload.galleryKey) {
-      data.append("oldUpload", upload.galleryKey);
-
-      await Put("/upload/" + upload.galleryId, data)
+      await Put("/upload/" + upload.gallery.id, data)
         .then(result => {
           newKey = result.data.key;
           ToastMessage(
