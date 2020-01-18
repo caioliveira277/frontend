@@ -45,3 +45,18 @@ div.div-center {
 a {
   text-decoration: none !important;
 }
+article#main-article {
+  transition: padding 300ms ease;
+  max-height: 99vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+article#main-article::-webkit-scrollbar {
+  width: 0 !important;
+}
+article#main-article {
+  -ms-overflow-style: none;
+}
+article#main-article {
+  overflow: -moz-scrollbars-none;
+}

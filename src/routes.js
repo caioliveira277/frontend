@@ -27,11 +27,13 @@ const Routes = () => (
     <Route path="/app" component={Header} />
     <section className="row">
       <Route path="/app" component={NavLeft} />
-      <Switch>
-        <PrivateRoute exact path="/app" component={Home} />
-        <PrivateRoute exact path="/app/profile" component={Profile} />
-        <PrivateRoute exact path="/app/menu" component={Menu} />
-      </Switch>
+      <article className="col-10" id="main-article">
+        <Switch>
+          <PrivateRoute exact path="/app" component={Home} />
+          <PrivateRoute exact path="/app/profile" component={Profile} />
+          <PrivateRoute exact path="/app/menu" component={Menu} />
+        </Switch>
+      </article>
     </section>
   </BrowserRouter>
 );

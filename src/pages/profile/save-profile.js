@@ -28,7 +28,7 @@ export default async function SaveProfile(data) {
       } else {
         await Post("/addresses", data["address"])
           .then(result => {
-            data["user"].id_address = result.data.id
+            data["user"].id_address = result.data.id;
           })
           .catch(error => {
             throw new Error(error.response.data);
@@ -39,7 +39,6 @@ export default async function SaveProfile(data) {
     if (!data["user"].cellPhone && !data["user"].telephone)
       throw new Error("Informe um número de contato");
     if (!data["user"].password) delete data["user"].password;
-
     await Put("/users/true/", data["user"])
       .then(() => {
         ToastMessage("Salvo com sucesso!", "success");
@@ -49,8 +48,7 @@ export default async function SaveProfile(data) {
       });
   } catch (error) {
     ToastMessage(error.message, "error");
-  }
-  finally{
-    return data["user"].id_address
+  } finally {
+    return data["user"].id_address;
   }
 }

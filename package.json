@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@kenshooui/react-multi-select": "^1.1.5",
     "axios": "^0.19.0",
     "bootstrap": "^4.4.1",
     "chart.js": "^2.9.3",
