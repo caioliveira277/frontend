@@ -5,7 +5,7 @@ import { InputGroup, Dropdown } from "react-bootstrap";
 import { BtnNavLeft } from "./../nav/index";
 import "./../animations/fade.css";
 import "./styles.css";
-import { currentUser, BaseURL } from "../../services/api";
+import { CurrentUser, BaseURL } from "../../services/api";
 import UserDefaultImg from "../../assets/images/userDefault.png"
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.min.css';
@@ -16,7 +16,7 @@ const Header = () => {
   const [name, setName] = useState("...");
   const [userImage, setUserImage] = useState(UserDefaultImg);
   useEffect(() => {
-    currentUser().then(result => {
+    CurrentUser().then(result => {
       setName(result.data.name);
       if (result.data.gallery.length) setUserImage(`${BaseURL}/files/${result.data.gallery[0].key}`);
     });

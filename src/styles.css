@@ -1,3 +1,7 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 :root {
   --color-theme1: rgb(108, 82, 195);
   --color-theme1-2: #5a48a5;
@@ -15,7 +19,7 @@ body::-webkit-scrollbar {
 }
 body {
   background-color: #edf0f2;
-  background-image: url(//www.devmedia.com.br/view/img/grid-light.png?2);
+  background-image: url(./assets/images/grid-light.png);
   background-attachment: fixed;
   overflow-x: hidden;
 }

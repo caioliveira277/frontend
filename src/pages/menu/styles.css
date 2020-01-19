@@ -1,3 +1,10 @@
 div.card > h5{
   color: #848684;
 }
+.currentMenu > .badge {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+.currentMenu {
+  border-color: var(--color-theme1-2);
+}

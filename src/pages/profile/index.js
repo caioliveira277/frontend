@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Card, InputGroup, OverlayTrigger, Tooltip } from "react-bootstrap";
-import { ApiZipcode, BaseURL, currentUser } from "../../services/api";
+import { ApiZipcode, BaseURL, CurrentUser } from "../../services/api";
 import SaveProfile from "./save-profile";
 import SaveUpload from "./save-upload";
 import UserDefaultImg from "../../assets/images/userDefault.png";
@@ -42,21 +42,20 @@ export default function Profile() {
     id_address: null
   });
 
-  
   useEffect(() => {
-    currentUser().then(result => {
+    CurrentUser().then(result => {
       const dataUser = result.data;
       const dataGallery = result.data.gallery;
       const dataAddress = result.data.address;
       if (dataGallery.length) {
         dataUser.userImage = `${BaseURL}/files/${dataGallery[0].key}`;
         setGallery(dataGallery[0]);
-      }else{
+      } else {
         dataUser.userImage = UserDefaultImg;
       }
 
       dataUser.isActive = dataUser.isActive === true ? "Ativo" : "Inativo";
-      dataUser.id_user = dataUser.id
+      dataUser.id_user = dataUser.id;
       setUser(dataUser);
       if (dataUser.id_address) {
         dataAddress.neighborhood = dataAddress.neighborhoods.neighborhood;
@@ -262,7 +261,11 @@ export default function Profile() {
                 locale="pt"
                 name="dateOfBirth"
                 value={new Date(user.dateOfBirth)}
-                onChange={handleChangeUser}
+                onChange={e =>
+                  handleChangeUser({
+                    target: { name: "dateOfBirth", value: e }
+                  })
+                }
               ></DatePicker>
             </div>
           </Card>

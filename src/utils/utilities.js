@@ -22,9 +22,26 @@ const weeks = [
   "Sabado",
   "Domingo"
 ];
-const dateToday = `${dateNow.getDate()}/${dateNow.getMonth() + 1}/${dateNow.getFullYear()}`;
+const dateToday = dateNow.toLocaleString("pt-BR");
+const formatForDB = date => {
+  date = date.toLocaleString("en-US", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit"
+  });
 
-const DateFormatDB = (date, time = false) => {
+  // return `${date[2]}-${date[1]}-${date[0]}`
+  return date.split(" ")[0]
+};
+const DateFormatDB = (date, time = false, standart = false) => {
+  if (standart === true) {
+    standart = new Date(date.toLocaleDateString());
+    date = `${standart.getFullYear()}-${standart.getMonth() +
+      1}-${standart.getDate()}`;
+  }
   const splitDateTime = date.split(" ");
   const splitDate = splitDateTime[0].split("-");
 
@@ -38,4 +55,4 @@ const DateFormatDB = (date, time = false) => {
   return setDate;
 };
 
-export { dateNow, monthsName, weeks, dateToday, DateFormatDB };
+export { dateNow, monthsName, weeks, dateToday, DateFormatDB, formatForDB };

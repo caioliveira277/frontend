@@ -4,7 +4,7 @@
       lg: [11, 24, 42, 35, 64, 54]
     };
 
-    const dataMenu = [
+    const dataMenus = [
   {
     description: ` Lorem ipsum dolor, sit amet consectetur adipisicing elit.
               Assumenda perferendis molestias et sunt doloribus eos repudiandae
@@ -14,7 +14,7 @@
               Voluptatibus nobis fuga laudantium molestiae exercitationem autem
               totam dolorem iusto magni, consequatur, doloribus reiciendis,
               itaque ad omnis maiores sequi.`,
-    publishAt: "2019-12-22 15:19:09.700347-03"
+    dateOfPublication: "2019-12-22 15:19:09.700347-03"
   },
   {description: ` Lorem ipsum dolor, sit amet consectetur adipisicing elit.
               Assumenda perferendis molestias et sunt doloribus eos repudiandae
@@ -24,7 +24,7 @@
               Voluptatibus nobis fuga laudantium molestiae exercitationem autem
               totam dolorem iusto magni, consequatur, doloribus reiciendis,
               itaque ad omnis maiores sequi.`,
-    publishAt: "2019-12-23 15:19:09.700347-03"
+    dateOfPublication: "2019-12-23 15:19:09.700347-03"
   },{
     description: ` Lorem ipsum dolor, sit amet consectetur adipisicing elit.
               Assumenda perferendis molestias et sunt doloribus eos repudiandae
@@ -34,7 +34,7 @@
               Voluptatibus nobis fuga laudantium molestiae exercitationem autem
               totam dolorem iusto magni, consequatur, doloribus reiciendis,
               itaque ad omnis maiores sequi.`,
-    publishAt: "2019-12-24 15:19:09.700347-03"
+    dateOfPublication: "2019-12-24 15:19:09.700347-03"
   },{
     description: ` Lorem ipsum dolor, sit amet consectetur adipisicing elit.
               Assumenda perferendis molestias et sunt doloribus eos repudiandae
@@ -44,7 +44,7 @@
               Voluptatibus nobis fuga laudantium molestiae exercitationem autem
               totam dolorem iusto magni, consequatur, doloribus reiciendis,
               itaque ad omnis maiores sequi.`,
-    publishAt: "2019-12-25 15:19:09.700347-03"
+    dateOfPublication: "2019-12-25 15:19:09.700347-03"
   },
 ];
-export { dataChart, dataMenu };
+export { dataChart, dataMenus };

@@ -1,35 +1,27 @@
 import axios from "axios";
-
 const BaseURL = "http://192.168.0.14:3000/api";
-// const token = sessionStorage.getItem("token");
-const config = () => {
-  return {
-    headers: {
-      Authorization: "Bearer " + sessionStorage.getItem("token")
-    }
-  };
-};
-const Api = axios.create({
-  baseURL: BaseURL,
-  config: {
-    headers: { "Content-Type": "application/json" }
-  }
+
+const Axios = axios.create({
+  baseURL: BaseURL
 });
-const currentUser = async () => {
-  return await Api.get("/users/true", config());
+Axios.defaults.headers.common["Authorization"] =
+  "Bearer " + sessionStorage.getItem("token");
+
+const CurrentUser = () => {
+  return Axios.get("/users/true");
 };
-const Get = async (url, data) => {
-  return await Api.get(url, data, config());
+const Get = (url, data) => {
+  return Axios.get(url, { params: data });
 };
-const Post = async (url, data) => {
-  return await Api.post(url, data, config());
+const Post = (url, data) => {
+  return Axios.post(url, data);
 };
-const Put = async (url, data) => {
-  return await Api.put(url, data, config());
+const Put = (url, data) => {
+  return Axios.put(url, data);
 };
 
 const ApiZipcode = axios.create({
   baseURL: "https://viacep.com.br/ws"
 });
 
-export { Api, currentUser, ApiZipcode, Get, Post, Put, BaseURL };
+export { Axios, CurrentUser, ApiZipcode, Get, Post, Put, BaseURL };
